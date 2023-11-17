@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.theme-light {
+  --actionButton: #2A4DD0;
+  --greenIcon: #4CA154;
+  --Bg: #F2F9FE;
+  --lightGray: #909193;
+  --text: #223344;
+}
+
+.theme-dark {
+  --actionButton: #2A4DD0;
+  --greenIcon: #4CA154;
+  --Bg: #111729;
+  --lightGray: #909193;
+  --text: white;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--Bg);
+}
+
+header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 1rem 0 0 4rem;
+}
+@media screen and (max-width: 767px) {
+  header {
+    padding: 1rem;
+  }
+}
+header #white {
+  display: none;
+}
+
+.topMenu {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: auto;
+  left: 35%;
+}
+.topMenu li {
+  float: left;
+  display: block;
+  color: var(--lightGray);
+  text-align: center;
+  padding: 0.3rem 1rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.topMenu li:hover {
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .topMenu li {
+    display: none;
+  }
+}
+
+.buttonGroup .menuBtn {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .buttonGroup .menuBtn {
+    float: right;
+    display: block;
+    fill: var(--text);
+  }
+}
+.buttonGroup .closeBtn {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .buttonGroup .closeBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .topMenu.responsive {
+    background-color: white;
+    padding: 4rem 0 1rem 0;
+    min-height: 100vh;
+    width: 60%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+  }
+  .topMenu.responsive ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .topMenu.responsive li {
+    font-size: 2rem;
+    padding: 0.8rem 0;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    display: block;
+    color: #242942;
+    text-decoration: none;
+  }
+  .buttonGroup.responsive .menuBtn {
+    display: none;
+  }
+  .buttonGroup.responsive .closeBtn {
+    display: block;
+    position: absolute;
+    padding: 1.5rem;
+    z-index: 2;
+    right: 0;
+    top: 0;
+  }
+  .switch.responsive {
+    position: relative;
+    display: block;
+    inset-inline: 0;
+    margin-inline: auto;
+  }
+}
+.switch {
+  position: fixed;
+  z-index: 1;
+  top: 4%;
+  right: 3%;
+  width: 4rem;
+  height: 1.7rem;
+  transition: 0.3s ease all;
+}
+@media screen and (max-width: 767px) {
+  .switch {
+    display: none;
+  }
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch input:checked + .slider {
+  background-color: #223344;
+  background-image: url("Images/Sun_light.svg");
+  background-repeat: no-repeat;
+  background-position: right 15% center;
+  background-size: 1.2rem;
+}
+.switch input:focus + .slider {
+  outline: none;
+}
+.switch input:checked + .slider:before {
+  background-image: url("Images/Moon_dark.svg");
+  background-position: center;
+  background-size: 90%;
+  transform: translateX(-26px);
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 8px;
+  bottom: 0;
+  background-color: #223344;
+  background-image: url("Images/Moon_light.svg");
+  background-repeat: no-repeat;
+  background-position: left 15% center;
+  background-size: 1.2rem;
+  transition: 0.5s;
+}
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.2rem;
+  width: 1.2rem;
+  right: 4px;
+  bottom: 4px;
+  background-color: white;
+  background-image: url("Images/Sun_dark.svg");
+  background-position: center;
+  background-size: 90%;
+  transition: 0.5s;
+}
+.switch .slider.round {
+  border-radius: 2rem;
+}
+.switch .slider.round:before {
+  border-radius: 50%;
+}
+
+main {
+  padding: 0 1rem 0 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+}
+@media screen and (max-width: 767px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+main img {
+  order: 2;
+  margin-top: 2rem;
+  max-width: 35rem;
+}
+@media screen and (max-width: 767px) {
+  main img {
+    order: 0;
+    margin-top: 1rem;
+  }
+}
+main section {
+  margin-top: 4rem;
+}
+main section .top-text {
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  font-size: 0.9rem;
+}
+main section h1 {
+  font-size: 4rem;
+  margin: 1rem 0;
+  color: var(--text);
+  line-height: 5rem;
+}
+@media screen and (max-width: 767px) {
+  main section h1 {
+    font-size: 3rem;
+  }
+}
+main section .bottom-text {
+  color: var(--lightGray);
+  max-width: 26rem;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+main section button {
+  padding: 1rem 1.5rem;
+  background-color: var(--actionButton);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  border: none;
+  margin-right: 1.5rem;
+}
+main section button:hover {
+  box-shadow: 0.1rem 0.1rem 1rem 0.2rem rgba(42, 78, 208, 0.4470588235);
+  cursor: pointer;
+}
+main section a {
+  color: var(--actionButton);
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+main section a:hover {
+  cursor: pointer;
+}
+main section .flex-group {
+  display: flex;
+  margin-top: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  main section .flex-group {
+    display: block;
+  }
+}
+main section .flex-group div {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+  margin-right: 1rem;
+  color: var(--lightGray);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--lightGray);
+}
+footer a {
+  color: var(--lightGray);
+  text-decoration: none;
+  font-weight: 600;
+}
+footer a:hover {
+  color: var(--actionButton);
+}/*# sourceMappingURL=style.css.map */
