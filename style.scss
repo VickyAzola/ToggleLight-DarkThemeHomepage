@@ -24,6 +24,12 @@ $font: 'Poppins', sans-serif;
     --text: white;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     min-height: 100vh;
     font-family: $font;
@@ -34,9 +40,9 @@ header {
     display: flex;
     position: relative;
     justify-content: space-between;
-    padding: 1rem 0 0 4rem ;
+    padding: 2rem 0 0 4rem ;
     @include mobile() {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     #white {
@@ -51,6 +57,10 @@ header {
     top: 0;
     width: auto;
     left: 35%;
+
+    ul {
+        padding: 1.7rem 0;
+    }
     
     li {
         float: left;
@@ -92,20 +102,15 @@ header {
 }
 
 @include mobile() {
-
     .topMenu.responsive {
         background-color: white;
         padding: 4rem 0 1rem 0;
         min-height: 100vh;
-        width: 60%;
         position: absolute;
-        z-index: 1;
         top: 0;
         right: 0; 
 
         ul {
-            padding: 0;
-            margin: 0;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -115,7 +120,6 @@ header {
         li {
             font-size: 2rem;
             padding: .8rem 0;
-            margin-bottom: .5rem;
             font-weight: 600;
             display: block;
             color: #242942;
@@ -144,7 +148,6 @@ header {
     }
 }
 
-
 .switch {
     position: fixed;
     z-index: 1;
@@ -163,7 +166,6 @@ header {
         width: 0;
         height: 0;
         
-
         &:checked + .slider {
             background-color: #223344;
             background-image: url('Images/Sun_light.svg');
@@ -227,14 +229,14 @@ header {
 }
 
 main {
-    padding: 0 1rem 0 4rem;
+    padding: 0 2rem 0 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 3rem;
+    column-gap: 2rem;
     @include mobile() {
         display: flex;
         flex-direction: column;
-        padding: 1rem;
+        padding: 1rem 2rem;
     }
 
     img {
@@ -253,8 +255,7 @@ main {
         .top-text {
             font-weight: 600;
             color: var(--text);
-            margin: 0;
-            font-size: .9rem;
+            font-size: .8rem;
         }
     
         h1 {
@@ -263,7 +264,7 @@ main {
             color: var(--text);
             line-height: 5rem;
             @include mobile() {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
         }
     
@@ -322,6 +323,7 @@ main {
 }
 
 footer {
+    padding: 1rem 0;
     text-align: center;
     font-size: .7rem;
     color: var(--lightGray);
